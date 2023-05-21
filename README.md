@@ -31,8 +31,8 @@
 - Spring Integration
 
 ### Chat-bot
-- ...
-- ...
+- Python
+- LangChain
 
 ### Infrastructure
 - MySQL
