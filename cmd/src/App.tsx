@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { Main, Info, Mypage, Account, Realtime, Predict } from './pages';
+import { Sidebar } from './components/Sidebar';
 
 import './styles/App.css';
 
@@ -9,6 +10,7 @@ function App() {
   return (
     <>
       <Router>
+        <Sidebar />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/info" element={<Info />} />
