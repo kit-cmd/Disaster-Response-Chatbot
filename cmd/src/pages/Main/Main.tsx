@@ -24,6 +24,11 @@ export const Main = () => {
                     map: "지도"
                 }} />
             </section>
+
+            <section className='calamity-today-tip'>
+                <div>오늘의 팁</div>
+                <div>{`사람들에게 도움이 될만한 오늘의 팁 표시`}</div>
+            </section>
         </section>
         
     )
