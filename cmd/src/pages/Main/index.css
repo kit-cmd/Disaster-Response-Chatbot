@@ -16,7 +16,7 @@
 
     margin: 0 5%;
 
-    height: 30vh;
+    height: 35vh;
 }
 
 
@@ -66,5 +66,32 @@
     font-size: 1.3rem;
     font-weight: bold;
 
+    margin-bottom: 10px;
+}
+
+.calamity-recent-section{
+    width: 100%;
+    padding: 0 5%;
+    padding-bottom: 5vh;
+    height: 45vh;
+}
+
+.calamity-recent-wrapper{
+    width: 100%;
+    height: 100%;
+
+    background-color: #D5DFF1;
+}
+
+.calamity-recent-header{
+    width: 100%;
+    
+    font-size: 1.3rem;
+    padding: 15px 0px 15px 20px;
+
+    border-bottom: 1px solid #000000;
+}
+
+.calamity-recent-info{
     margin-bottom: 10px;
 }
