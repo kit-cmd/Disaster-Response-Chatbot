@@ -5,12 +5,14 @@ import { Main, Info, Mypage, Account, Realtime, Predict } from './pages';
 import { Sidebar } from './components/Sidebar';
 
 import './styles/App.css';
+import { Chatbot } from './components/Chatbot';
 
 function App() {
   return (
     <>
       <Router>
         <Sidebar />
+        <Chatbot />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/info" element={<Info />} />
