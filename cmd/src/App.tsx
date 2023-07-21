@@ -5,6 +5,7 @@ import { Main, Info, Mypage, Account, Realtime, Predict } from './pages';
 import { Sidebar } from './components/Sidebar';
 
 import './styles/App.css';
+import { Location } from './pages/Location/Location';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/realtime" element={<Realtime />} />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/account" element={<Account />} />
+          <Route path='/location' element={<Location />} />
         </Routes>
       </Router>
     </>

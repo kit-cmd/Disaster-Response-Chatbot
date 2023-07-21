@@ -1,0 +1,4 @@
+.location_container {
+    width:calc(100% - 250px);
+    float: right;
+}
