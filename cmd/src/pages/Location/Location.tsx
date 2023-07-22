@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import "../../styles/Location.css"
+import axios from "axios";
 
 export const Location = () => {
 
@@ -22,6 +23,10 @@ export const Location = () => {
                 console.log(err)
             });
     }, []);
+
+    useEffect(() => {
+        axios.get(`http://127.0.0.1:8080/api/shelter/getinfo/length?latitude=${latitude}&longitude=${longitude}`)
+    }, [latitude, longitude])
 
     return (
         <div className="location_container">
