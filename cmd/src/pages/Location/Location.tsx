@@ -25,7 +25,9 @@ export const Location = () => {
     }, []);
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8080/api/shelter/getinfo/length?latitude=${latitude}&longitude=${longitude}`)
+        axios.get(`1`)
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err))
     }, [latitude, longitude])
 
     return (
