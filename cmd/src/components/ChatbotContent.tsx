@@ -19,7 +19,7 @@ export const ChatbotContent = ({ setInActive }: ChatbotContentProps) => {
         isUser: false
     }
 
-    const endpoint = "ws://localhost:8000/ws"
+    const endpoint = process.env.REACT_APP_CHATBOT_ENDPOINT || "ws://localhost:8000/ws";
     const ws = useRef<WebSocket | null>(null);
 
     const handleStreamMessage = async (message: string) => {
