@@ -1,0 +1,97 @@
+.calamity-info-section{
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 5vh;
+}
+
+.calamity-summary-wrapper{
+    display:flex;
+    flex-direction: column;
+
+    width: 40%;
+    min-width: 300px;
+
+    background-color: #D5DFF1;
+
+    margin: 0 5%;
+
+    height: 35vh;
+}
+
+
+.calamity-summary-header{
+    width: 100%;
+    
+    font-size: 1.3rem;
+    padding: 15px 0px 15px 20px;
+
+    border-bottom: 1px solid #000000;
+}
+
+.calamity-summary-body{
+    display: flex;
+    height: 100%;
+}
+
+.calamity-summary-map-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45%;
+    padding: 20px 10px;
+}
+
+.calamity-summary-info-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    width: 55%;
+    padding: 20px 10px;
+}
+
+.calamity-today-tip{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 20vh;
+}
+
+.calamity-today-tip > div:first-child{
+    font-size: 1.3rem;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.calamity-recent-section{
+    width: 100%;
+    padding: 0 5%;
+    padding-bottom: 5vh;
+    height: 45vh;
+}
+
+.calamity-recent-wrapper{
+    width: 100%;
+    height: 100%;
+
+    background-color: #D5DFF1;
+}
+
+.calamity-recent-header{
+    width: 100%;
+    
+    font-size: 1.3rem;
+    padding: 15px 0px 15px 20px;
+
+    border-bottom: 1px solid #000000;
+}
+
+.calamity-recent-info{
+    margin-bottom: 10px;
+}
