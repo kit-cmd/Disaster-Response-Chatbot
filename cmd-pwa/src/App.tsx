@@ -8,6 +8,7 @@ import { Sidebar } from './components/Sidebar';
 import "./Firebase"
 
 import './styles/App.css';
+import { Chatbot } from './components/Chatbot';
 
 const App = () => {
 
@@ -32,6 +33,7 @@ const App = () => {
     <>
       <Router>
         <Sidebar />
+        <Chatbot />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/info" element={<Info />} />
