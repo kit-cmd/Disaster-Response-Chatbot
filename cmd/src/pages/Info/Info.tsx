@@ -6,19 +6,19 @@ export const Info = () => {
     const infos = [
         {
             name : "태풍",
-            content : "태풍 정보"
+            content : "태풍 정보 입니다"
         },
         {
             name : "호우",
-            content : "호우 정보"
+            content : "호우 정보 입니다"
         }, 
         {
             name : "지진",
-            content : "지진 정보"
+            content : "지진 정보 입니다"
         }, 
         {
             name : "대설",
-            content : "대설 정보"
+            content : "대설 정보 입니다"
         }, 
     ];
 
