@@ -1,11 +1,13 @@
 import {useEffect, useState} from "react";
 import "../../styles/Location.css"
 import axios from "axios";
+import { LList } from "./LList";
 
 export const Location = () => {
 
     const [latitude, setLatitude] = useState(0);
     const [longitude, setLongitude] = useState(0);
+    const [data, setData] = useState();
 
     useEffect(() => {
         navigator
@@ -25,15 +27,16 @@ export const Location = () => {
     }, []);
 
     useEffect(() => {
-        axios.get(`1`)
-        .then((res) => console.log(res))
+        axios.get(`http://192.168.162.181:8080/api/shelter/getinfo/length?latitude=${latitude}&longitude=${longitude}`)
+        .then((res) => {
+            console.log(res)
+            setData(res.data)})
         .catch((err) => console.log(err))
     }, [latitude, longitude])
 
     return (
         <div className="location_container">
-            <p>위도 : {latitude}</p>
-            <p>경도 : {longitude}</p>
+            <LList data={data}/>
         </div>
     )
 }
