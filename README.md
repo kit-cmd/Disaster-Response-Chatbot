@@ -11,11 +11,11 @@
 프로젝트 이미지, 배포 주소 등 추가 예정
 
 ## 팀원 소개
-| 안재현 | 임유빈 | 서장준 | 전용현 | 박규현 |
-|:-----:|:------:|:-----:|:------:|:------:|
-| ![jae] | ![you] | ![daki] | ![young] | ![kyu]|
-| 프론트엔드 | 프론트엔드 | 챗봇 | 백엔드 | 백엔드 |
-| [JaeHyunGround](https://github.com/JaeHyunGround) | [bini59](https://github.com/bini59) | [Daki404](https://github.com/Daki404) | [Raccooon98](https://github.com/Raccooon98) | [freemoon99](https://github.com/freemoon99) |
+| 임유빈 | 서장준 | 전용현 | 박규현 |
+|:------:|:-----:|:------:|:------:|
+| ![you] | ![daki] | ![young] | ![kyu]|
+| 프론트엔드 | 챗봇 | 백엔드 | 백엔드 |
+| [bini59](https://github.com/bini59) | [Daki404](https://github.com/Daki404) | [Raccooon98](https://github.com/Raccooon98) | [freemoon99](https://github.com/freemoon99) |
 
 ## 기술 스택
 ### Frontend
