@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
 import "./index.css"
-import { CalamityInfo } from './Components/CalamityInfo';
+import { Calamity } from '../../components/Calamity';
 import { RecentInfo } from './Components/RecentInfo';
 
 export const Main = () => {
@@ -18,18 +18,20 @@ export const Main = () => {
     return (
         <section className='container'>
             <section className='calamity-info-section'>
-                <CalamityInfo title="재난 정보" info={{
+                <Calamity type={null} calamity={{
                     id: 1,
                     name: "재난 이름",
                     description: "재난 설명",
-                    map: "지도"
+                    map: "지도",
+                    date: "2021-10-10"
                 }} />
 
-                <CalamityInfo title="재난 정보" info={{
+                <Calamity type={null} calamity={{
                     id: 1,
                     name: "재난 이름",
                     description: "재난 설명",
-                    map: "지도"
+                    map: "지도",
+                    date: "2021-10-10"
                 }} />
             </section>
 

@@ -3,5 +3,5 @@ export interface Calamity {
     map: string;
     name: string;
     description: string;
-    // date: string;
+    date: string;
 };

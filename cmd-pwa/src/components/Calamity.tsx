@@ -4,7 +4,7 @@ import axios from "axios";
 
 interface CalamityProps {
     calamity: calamity;
-    type: string;
+    type: string | null;
 }
 
 interface locate {
@@ -32,7 +32,7 @@ export const Calamity = (props: CalamityProps) => {
 
 
     return (
-        <section className={"calamity-summary-wrapper" + "-" + type }>
+        <section className={type !== null ? "calamity-summary-wrapper" + "-" + type : "calamity-summary-wrapper" }>
             <div className="calamity-summary-header">
                 {calamity.name}
                 {/* 재난 위치로 변경할 것 */}
@@ -53,7 +53,7 @@ export const Calamity = (props: CalamityProps) => {
                 <div className="calamity-summary-info-wrapper">
                     <div>재난 종류 : {calamity.name}</div>
                     <div>상세 정보 : {calamity.description}</div>
-                    <div>발생 시각 : {"시각"}</div>
+                    <div>발생 시각 : {calamity.date}</div>
                 </div>
             </div>
         </section>

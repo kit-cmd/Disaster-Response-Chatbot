@@ -15,12 +15,14 @@ export const Realtime = () => {
                 name: "지진",
                 description: "지진이 발생했습니다.",
                 map: "지도",
+                date: "2021-10-10"
             },
             {
                 id: 2,
                 name: "화재",
                 description: "화재가 발생했습니다.",
                 map: "지도",
+                date: "2021-10-10"
             }
         ])
     }, [])
