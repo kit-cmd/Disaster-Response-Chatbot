@@ -21,7 +21,7 @@ export const Calamity = (props: CalamityProps) => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:3001/address?address=전라북도 군산시`)
+            .get(`http://localhost:3001/address?address=${calamity.map}`)
             .then((res) => {
                 setLocate(res.data)
             })
