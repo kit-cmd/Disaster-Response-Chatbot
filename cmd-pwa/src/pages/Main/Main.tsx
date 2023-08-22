@@ -1,20 +1,12 @@
-import { useNavigate } from 'react-router-dom';
-
 import "./index.css"
 import { Calamity } from '../../components/Calamity';
 import { RecentInfo } from './Components/RecentInfo';
 
-export const Main = () => {
-    const navigate = useNavigate();
-    
+import { randomInfo } from "../../module/info";
 
-    const recentInfos = [
-        "재난 최신 정보1",
-        "재난 최신 정보2",
-        "재난 최신 정보3",
-        "재난 최신 정보4",
-        "재난 최신 정보5",
-    ]
+export const Main = () => {
+
+    const recentInfos = randomInfo({num:5})
     return (
         <section className='container'>
             <section className='calamity-info-section'>
@@ -37,7 +29,7 @@ export const Main = () => {
 
             <section className='calamity-today-tip'>
                 <div>오늘의 팁</div>
-                <div>{`사람들에게 도움이 될만한 오늘의 팁 표시`}</div>
+                <div>{randomInfo({num:1})}</div>
             </section>
 
             <section className='calamity-recent-section'>
