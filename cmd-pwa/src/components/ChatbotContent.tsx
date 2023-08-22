@@ -87,7 +87,7 @@ export const ChatbotContent = ({ setInActive }: ChatbotContentProps) => {
     return (
         <section className="chatbot-content">
             <div className="chatbot-header">
-                <h1>Chatbot</h1>
+                <h1>도움 챗봇</h1>
                 <button className="chatbot-header__close" onClick={setInActive}>X</button>
             </div>
 
@@ -106,8 +106,8 @@ export const ChatbotContent = ({ setInActive }: ChatbotContentProps) => {
             </div>
 
             <div className="chatbot-input">
-                <input type="text" placeholder="Type your message..." value={input} onChange={handleInput} onKeyPress={handleKeyPress} />
-                <button>Send</button>
+                <input type="text" placeholder="메세지를 입력해주세요." value={input} onChange={handleInput} onKeyPress={handleKeyPress} />
+                <button>전송</button>
             </div>
         </section>
     )
