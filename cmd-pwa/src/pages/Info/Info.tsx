@@ -97,6 +97,7 @@ export const Info = () => {
                             )
                         })
                     }
+                    <div></div>
                 </div>
                 <div className="info_text">{infos?.description.map(item=>parseInfo(item, 0))}</div>
             </div>
