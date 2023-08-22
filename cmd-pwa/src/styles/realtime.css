@@ -10,3 +10,19 @@
 
     border-bottom: 1px solid #000;
 }
+
+.real-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: calc(100% - 60px);
+
+    padding-top: 40px;
+}
+
+.real-body > section{
+    margin-bottom: 50px;
+}
