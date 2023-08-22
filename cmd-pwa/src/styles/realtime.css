@@ -1,0 +1,28 @@
+.real-title{
+    display: flex;
+    align-items: center;
+
+    height: 60px;
+    padding-left: 5%;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    border-bottom: 1px solid #000;
+}
+
+.real-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: calc(100% - 60px);
+
+    padding-top: 40px;
+}
+
+.real-body > section{
+    margin-bottom: 50px;
+}
