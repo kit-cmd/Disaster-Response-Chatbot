@@ -9,8 +9,8 @@ export const Sidebar = () => {
 
     const links = [
         { name: '안전 지침', path: '/info', pathname: 'info' },
-        { name: '재난 예측 정보', path: '/predict', pathname: 'predict' },
-        { name: '실시간 재난 정보', path: '/realtime', pathname: 'realtime' },
+        // { name: '재난 예측 정보', path: '/predict', pathname: 'predict' },
+        { name: '대피 시설 정보 ', path: '/location', pathname: 'location' },
         { name: '로그인', path: '/account', pathname: 'account' },
     ]
 
