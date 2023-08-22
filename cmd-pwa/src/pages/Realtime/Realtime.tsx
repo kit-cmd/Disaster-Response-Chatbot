@@ -1,5 +1,13 @@
+import { Calamity } from "../../components/Calamity";
+
+import "../../styles/realtime.css";
+
 export const Realtime = () => {
     return (
-        <div>실시간 재난 정보 제공 페이지 입니다</div>
+        <div className="container">
+            <div className="real-title">
+                <span>실시간 재난 정보</span>
+            </div>
+        </div>
     )
 }
