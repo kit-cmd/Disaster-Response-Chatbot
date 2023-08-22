@@ -1,0 +1,11 @@
+.join > p {
+    font-size: 1.2vw;
+    font-weight: bold;
+}
+
+.join > input {
+    width: 100%;
+    background-color: #D5DFF1;
+    border: 0.5px solid #6F96DD;
+    padding: 3%;
+}
