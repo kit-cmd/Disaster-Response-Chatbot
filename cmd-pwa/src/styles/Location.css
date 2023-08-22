@@ -1,0 +1,26 @@
+.location_container {
+    width:calc(100% - 250px);
+    float: right;
+}
+
+.location_header > h1 {
+    width: 100%;
+    padding: 3%;
+    border-bottom: 1px solid #111;
+}
+
+.location_list {
+    padding: 3%;
+}
+
+.location_item {
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid #111;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+
+.location_item > p {
+    padding: 5%;
+}
