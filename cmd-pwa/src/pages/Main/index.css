@@ -64,6 +64,7 @@
 
 .calamity-today-tip > div:last-child{
     width: 80%;
+    text-align: center;
 }
 
 .calamity-today-tip > div:first-child{
