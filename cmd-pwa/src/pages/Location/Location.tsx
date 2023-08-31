@@ -1,10 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import axios from "axios";
 
 import "../../styles/Location.css"
 
 export const Location = () => {
-    const [latitude, setLatitude] = useState(0);
-    const [longitude, setLongitude] = useState(0);
+    const [locate, setLocate] = useState<any>([
+        {
+            id: 1,
+            map: "경상북도 울릉군 서면 태하리 512-2",
+            name: "울릉도 서면 대피소",
+            description: "울릉도 서면 대피소는 울릉도 서면에 위치한 대피소입니다.",
+        },
+        {
+            id: 2,
+            map: "경상북도 울릉군 북면 천부리 694",
+            name: "울릉도 북면 대피소",
+            description: "울릉도 북면 대피소는 울릉도 북면에 위치한 대피소입니다.",
+        }
+    ]);
+
+    const api_id = process.env.REACT_APP_NAVER_MAP_ID;
 
     // useEffect(() => {
     //     navigator
@@ -31,23 +47,53 @@ export const Location = () => {
     //     .catch((err) => console.log(err))
     // }, [latitude, longitude])
 
-    const locations = [
-        "경상북도 울릉군 서면 태하리 512-2",
-        "경상북도 울릉군 북면 천부리 694"
-    ]
+    useEffect(() => {
+        for (let i = 0; i < locate.length; i++) {
+            axios
+                .get(`http://localhost:3001/address?address=${locate[i].map}`)
+                .then((res) => {
+                    setLocate((prev: any) => {
+                        prev[i].x = res.data.x;
+                        prev[i].y = res.data.y;
+                        return [...prev]
+                    })
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+        }
+    }, [])
+
+    useEffect(() => {
+        console.log(locate)
+    }, [locate])
+
+
+
 
     return (
         <div className="location_container">
             <div className="location_header">
-                <h1>대피 시설 정보</h1>
+                <p>대피 시설 정보</p>
             </div>
             <div className="location_list">
-                <div className="location_item">
-                    <p>{locations[0]}</p>
-                </div>
-                <div className="location_item">
-                    <p>{locations[1]}</p>
-                </div>
+
+                {
+                    locate.map((location:any) => {
+                        return (
+                            <div className="location_item">
+                                <div className="location_item_img_wrapper">
+                                    <img src={`https://naveropenapi.apigw.ntruss.com/map-static/v2/raster-cors?w=300&h=300&center=${location?.x},${location?.y}&level=11&X-NCP-APIGW-API-KEY-ID=${api_id}`} />
+                                </div>
+                                <div>
+                                    <h3>{location.name}</h3>
+                                    <p>{location.description}</p>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
+
             </div>
         </div>
     )
