@@ -11,7 +11,6 @@ export const Sidebar = () => {
         { name: '안전 지침', path: '/info', pathname: 'info' },
         { name: '실시간 재난 정보', path: '/realtime', pathname: 'realtime' },
         { name: '대피 시설 정보 ', path: '/location', pathname: 'location' },
-        { name: '로그인', path: '/account', pathname: 'account' },
     ]
 
     const [active, setActive] = useState<String>('');
