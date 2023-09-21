@@ -22,4 +22,5 @@ code {
   height: 100vh;
   width: calc(100vw - 250px);
   margin-left: 250px;
+  background-color: #f5f5f5;
 }

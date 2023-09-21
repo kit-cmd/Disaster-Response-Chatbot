@@ -40,8 +40,8 @@ export const Calamity = (props: CalamityProps) => {
 
     const sx = 
         type !== null
-        ? { width: '90%', height: 350, margin: '15px 5%' }
-        : { width: '40%', height: '35vh', minWidth: 300, margin: '0 5%' }
+        ? { width: '90%', height: 350, margin: '15px 2%' }
+        : { width: '40%', height: '35vh', minWidth: 300, margin: '0 auto' }
     
     
     const mapimg = 
@@ -51,7 +51,7 @@ export const Calamity = (props: CalamityProps) => {
     return (
         <Card sx={sx}>
             <CardContent>
-                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                <Typography sx={{ fontSize: 14, fontWeight: 'bold' }} color="primary" gutterBottom>
                     {calamity.name}
                 </Typography>
                 <Typography component="div">

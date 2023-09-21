@@ -1,6 +1,7 @@
 import "./index.css"
 import { Calamity } from '../../components/Calamity';
 import { RecentInfo } from './Components/RecentInfo';
+import { Tip } from './Components/Tip';
 
 import { randomInfo } from "../../module/info";
 import { useMemo } from "react";
@@ -41,10 +42,7 @@ export const Main = () => {
                 }
             </section>
 
-            <section className='calamity-today-tip'>
-                <div>오늘의 팁</div>
-                <div>{randomInfo({num:1})}</div>
-            </section>
+            <Tip tip={randomInfo({ num: 1 })[0]} />
 
             <section className='calamity-recent-section'>
                 <RecentInfo infos={recentInfos} />           
