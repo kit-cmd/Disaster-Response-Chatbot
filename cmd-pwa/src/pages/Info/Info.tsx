@@ -85,9 +85,6 @@ export const Info = () => {
 
     return (
         <div className="info_container">
-            <div className="info_header">
-                <p>안전지침 정보</p>
-            </div>
             <div className="infos">
                 <div className="info_tap">
                     {

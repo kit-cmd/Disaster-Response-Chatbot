@@ -73,9 +73,6 @@ export const Location = () => {
 
     return (
         <div className="location_container">
-            <div className="location_header">
-                <p>대피 시설 정보</p>
-            </div>
             <div className="location_list">
 
                 {
