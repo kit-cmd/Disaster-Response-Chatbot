@@ -2,11 +2,11 @@
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 75px;
-    height: 75px;
-    background-color: #fff;
+    width: 56px;
+    height: 56px;
+    /* background-color: #fff;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); */
     cursor: pointer;
     z-index: 9999;
     transition: all 0.3s ease-in-out;

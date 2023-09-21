@@ -4,7 +4,7 @@
     left: 0;
     bottom: 0;
     width: 250px;
-    background-color: #D5DFF1;
+    background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     z-index: 100;
     transition: all 0.3s ease-in-out;
