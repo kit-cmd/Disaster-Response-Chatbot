@@ -1,4 +1,10 @@
 import img from "../assets/img/chatbot.png"
+import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
+
+import {
+    Fab
+}
+from "@mui/material";
 
 interface ChatbotIconProps {
     setActive: () => void
@@ -6,10 +12,8 @@ interface ChatbotIconProps {
 
 export const ChatbotIcon = ({ setActive }:ChatbotIconProps) => {
     return (
-        <section className="chatbot-icon" onClick={setActive}>
-            <div className="chatbot-icon__container">
-                <img src={img} alt="chatbot" />
-            </div>
-        </section>
+        <Fab  onClick={setActive}>
+            <ChatBubbleOutlineIcon />
+        </Fab>
     );
 }

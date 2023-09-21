@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import "../../styles/Location.css"
+import { Item } from "./Components/Item";
 
 export const Location = () => {
     const [locate, setLocate] = useState<any>([
@@ -73,12 +74,9 @@ export const Location = () => {
 
     return (
         <div className="location_container">
-            <div className="location_header">
-                <p>대피 시설 정보</p>
-            </div>
             <div className="location_list">
 
-                {
+                {/* {
                     locate.map((location:any) => {
                         return (
                             <div className="location_item">
@@ -90,6 +88,13 @@ export const Location = () => {
                                     <p>{location.description}</p>
                                 </div>
                             </div>
+                        )
+                    })
+                } */}
+                {
+                    locate.map((location: any) => {
+                        return (
+                            <Item location={location} />
                         )
                     })
                 }

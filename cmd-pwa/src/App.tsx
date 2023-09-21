@@ -4,11 +4,18 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Main, Info, Realtime, Predict, Location } from './pages';
 import { Sidebar } from './components/Sidebar';
 
+import { createTheme, ThemeProvider } from '@mui/material';
 
 import "./Firebase"
 
 import './styles/App.css';
 import { Chatbot } from './components/Chatbot';
+
+const theme = createTheme({
+  typography: {
+    fontFamily: "'IBM Plex Sans KR', 'Noto Sans KR', sans-serif"
+  }
+})
 
 const App = () => {
 
@@ -30,7 +37,7 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Router>
         <Sidebar />
         <Chatbot />
@@ -42,7 +49,7 @@ const App = () => {
           <Route path="/location" element={<Location />} />
         </Routes>
       </Router>
-    </>
+    </ThemeProvider>
   );
 }
 
