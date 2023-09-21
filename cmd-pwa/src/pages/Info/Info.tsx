@@ -4,6 +4,17 @@ import "../../styles/Info.css"
 import { safeInfo } from "../../module/info";
 import { info } from "../../types/info";
 
+import {
+    List,
+    ListItem,
+    ListItemText,
+    Tabs,
+    Tab,
+    Box,
+    Typography,
+}
+from "@mui/material"
+
 
 export const Info = () => {
 
@@ -62,7 +73,7 @@ export const Info = () => {
         else if(typeof info.description[0] === "string"){
             return (
                 <>
-                    {res}
+                    {/* {res}
                     <ul>
                         {
                             info.description.map((item: any, index: number) => {
@@ -73,7 +84,19 @@ export const Info = () => {
                                 )
                             })
                         }
-                    </ul>
+                    </ul> */}
+                    {res}
+                    <List>
+                        {
+                            info.description.map((item: any, index: number) => {
+                                return (
+                                    <ListItem key={index}>
+                                        <ListItemText primary={item} />
+                                    </ListItem>
+                                )
+                            })
+                        }
+                    </List>
                 </>
             )
         }
@@ -86,16 +109,26 @@ export const Info = () => {
     return (
         <div className="info_container">
             <div className="infos">
-                <div className="info_tap">
-                    {
-                        calamityType.map((item, index) => {
-                            return (
-                                <div key={index} className={(tapActive=== index) ? "info_tap_active" : "info_tap_none"} onClick={()=>setTapActive(index)}>{item}</div>
-                            )
-                        })
-                    }
+                <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                    <Tabs
+                        value={tapActive}
+                        onChange={(e, newValue) => setTapActive(newValue)}
+                        indicatorColor="primary"
+                        textColor="primary"
+                        variant="scrollable"
+                        scrollButtons="auto"
+                        aria-label="scrollable auto tabs example"
+                    >
+                        {
+                            calamityType.map((item, index) => {
+                                return (
+                                    <Tab key={index} label={item} />
+                                )
+                            })
+                        }
+                    </Tabs>
                     <div></div>
-                </div>
+                </Box>
                 <div className="info_text">{infos?.description.map(item=>parseInfo(item, 0))}</div>
             </div>
         </div>
