@@ -51,7 +51,7 @@ export const Location = () => {
     useEffect(() => {
         for (let i = 0; i < locate.length; i++) {
             axios
-                .get(`http://localhost:3001/address?address=${locate[i].map}`)
+                .get(`http://114.129.198.66:8002/address?address=${locate[i].map}`)
                 .then((res) => {
                     setLocate((prev: any) => {
                         prev[i].x = res.data.x;

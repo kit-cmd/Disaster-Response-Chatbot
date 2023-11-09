@@ -13,10 +13,11 @@ import {
     ListItemText,
     ListItemButton,
     Box,
-
+    IconButton,
 }
+    from "@mui/material"
 
-from "@mui/material"
+import MenuIcon from '@mui/icons-material/Menu';
 
 export const Sidebar = () => {
     const navigate = useNavigate();
@@ -27,6 +28,7 @@ export const Sidebar = () => {
         { name: '안전 지침', path: '/info', pathname: 'info' },
         { name: '실시간 재난 정보', path: '/realtime', pathname: 'realtime' },
         { name: '대피 시설 정보 ', path: '/location', pathname: 'location' },
+        { name: '재난 관련 최신 정보', path: '/news', pathname: 'news'}
     ]
 
     const [active, setActive] = useState<String>('');
@@ -43,8 +45,35 @@ export const Sidebar = () => {
         }
     }, [location.pathname])
 
+    const [mobileOpen, setMobileOpen] = useState<boolean>(false);
+    const handleDrawerToggle = () => {
+        setMobileOpen(!mobileOpen);
+    };
 
 
+    const drawer = (
+        <>
+            <Toolbar />
+            <Box sx={{ overflow: 'auto' }}>
+            <List>
+                {links.map((link, index) => {
+                    return (
+                        <ListItemButton
+                            key={index}
+                            onClick={() => {
+                                navigate(link.path)
+                                handleDrawerToggle()
+                            }}
+                            selected={active === link.pathname}
+                        >
+                            <ListItemText primary={link.name} />
+                        </ListItemButton>
+                    )
+                })}
+                </List>
+            </Box>
+        </>
+    );
 
 
     return (
@@ -59,6 +88,15 @@ export const Sidebar = () => {
 
             >
                 <Toolbar>
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        edge="start"
+                        onClick={handleDrawerToggle}
+                        sx={{ mr: 2, display: { sm: 'none' } }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
                     <Typography variant="h6" noWrap component="div">
                         CMD
                     </Typography>
@@ -66,33 +104,33 @@ export const Sidebar = () => {
             </AppBar>
             <Drawer
                 sx={{
-                    width: 240,
-                    flexShrink: 0,
+                    display: { xs: 'block', sm: 'none' },
                     '& .MuiDrawer-paper': {
                         width: 240,
                         boxSizing: 'border-box',
                     },
                 }}
-                
+                variant="temporary"
+                open={mobileOpen}
+                onClose={handleDrawerToggle}
+                ModalProps={{
+                    keepMounted: true,
+                }}
+            >   
+                {drawer}
+            </Drawer>
+            <Drawer
+                sx={{
+                    display: { xs: 'none', sm: 'block' },
+                    '& .MuiDrawer-paper': {
+                        width: 240,
+                        boxSizing: 'border-box',
+                    },
+                }}
                 variant="permanent"
-                anchor="left"
+                open
             >
-                <Toolbar />
-                <Box sx={{ overflow: 'auto' }}>
-                    <List>
-                        {links.map((link, index) => {
-                            return (
-                                <ListItemButton
-                                    key={index}
-                                    onClick={() => navigate(link.path)}
-                                    selected={active === link.pathname}
-                                >
-                                    <ListItemText primary={link.name}  />
-                                </ListItemButton>
-                            )
-                        })}
-                    </List>
-                </Box>
+                {drawer}
             </Drawer>
         </Box>
         

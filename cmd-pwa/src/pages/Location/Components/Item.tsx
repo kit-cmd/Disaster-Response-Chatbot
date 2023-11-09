@@ -12,7 +12,7 @@ export const Item = ({ location }: { location: any }) => {
     const img = `https://naveropenapi.apigw.ntruss.com/map-static/v2/raster-cors?w=300&h=300&center=${location?.x},${location?.y}&level=11&X-NCP-APIGW-API-KEY-ID=${api_id}`
 
     return (
-        <Card sx={{ maxWidth: 345, marginRight: '20px', marginBottom: '10px' }}>
+        <Card className="location__item" sx={{ maxWidth: 345, marginRight: '20px', marginBottom: '10px' }}>
             <CardMedia
                 component="img"
                 height="170"

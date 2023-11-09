@@ -20,6 +20,15 @@
     transition: all 0.3s ease-in-out;
 }
 
+@media screen and (max-width: 768px) {
+    .chatbot-active{
+        width: 75vw;
+        height: 60vh;
+        right: 40px;
+    }
+    
+}
+
 .chatbot-icon{
     position: absolute;
     top: 50%;

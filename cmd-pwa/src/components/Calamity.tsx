@@ -29,7 +29,7 @@ export const Calamity = (props: CalamityProps) => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:3001/address?address=${calamity.map}`)
+            .get(`http://114.129.198.66:8002/address?address=${calamity.map}`)
             .then((res) => {
                 setLocate(res.data)
             })
@@ -41,7 +41,11 @@ export const Calamity = (props: CalamityProps) => {
     const sx = 
         type !== null
         ? { width: '90%', height: 350, margin: '15px 2%' }
-        : { width: '40%', height: '35vh', minWidth: 300, margin: '0 auto' }
+        : { width: '40%', height: '30vh', minWidth: 300, margin: '0 auto' }
+    const className = 
+        type !== null
+        ? "" 
+        : "calamity-summary-wrapper"
     
     
     const mapimg = 
@@ -49,7 +53,7 @@ export const Calamity = (props: CalamityProps) => {
     
     
     return (
-        <Card sx={sx}>
+        <Card className={className} sx={sx}>
             <CardContent>
                 <Typography sx={{ fontSize: 14, fontWeight: 'bold' }} color="primary" gutterBottom>
                     {calamity.name}

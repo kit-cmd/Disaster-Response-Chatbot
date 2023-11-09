@@ -1,8 +1,8 @@
 .info_container {
     /* height: calc(100vh - 64px); */
-    width: calc(100% - 240px);
+    width: 100%;
     margin-top: 64px;
-    margin-left: 240px;
+    /* margin-left: 240px; */
     float: right;
     background-color: #f5f5f5;
 }
@@ -32,6 +32,16 @@
     margin: 5% auto;
     /* border: 1px solid #000; */
     border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+
+    .info_container {
+        margin-left: 240px;
+        width: calc(100% - 240px);
+        /* height: calc(100vh - 64px); */
+    }
+    
 }
 
 /* .info_tap {

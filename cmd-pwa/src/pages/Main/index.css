@@ -5,20 +5,6 @@
     margin-top: 5vh;
 }
 
-.calamity-summary-wrapper{
-    display:flex;
-    flex-direction: column;
-
-    width: 40%;
-    min-width: 300px;
-
-    background-color: #D5DFF1;
-
-    margin: 0 5%;
-
-    height: 35vh;
-}
-
 
 .calamity-summary-header{
     width: 100%;
@@ -71,14 +57,22 @@
     font-size: 1.3rem;
     font-weight: bold;
 
-    margin-bottom: 10px;
+    /* margin-bottom: 5px; */
+}
+
+@media screen and (max-width: 768px) {
+    .calamity-today-tip > div:first-child{
+        
+    
+        margin-bottom: 20px;
+    }
 }
 
 .calamity-recent-section{
     width: 100%;
     padding: 0 5%;
     padding-bottom: 5vh;
-    height: 45vh;
+    height: 40vh;
 }
 
 .calamity-recent-wrapper{
@@ -99,4 +93,25 @@
 
 .calamity-recent-info{
     margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .calamity-info-section{
+        flex-direction: column;
+    }
+
+    .calamity-summary-wrapper{
+        width: 90% !important;
+        margin-bottom: 20px !important;
+        height: 400px !important;
+    }
+
+    .calamity-today-tip{
+        height: auto;
+    }
+
+    .calamity-recent-section{
+        height: auto;
+    }
 }
