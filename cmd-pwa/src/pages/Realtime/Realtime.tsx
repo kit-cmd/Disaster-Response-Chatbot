@@ -3,29 +3,52 @@ import { Calamity } from "../../components/Calamity";
 import { Calamity as calamity } from "../../types/calamity";
 
 import "../../styles/realtime.css";
+import { getMessaging, onMessage } from "firebase/messaging";
+import axios from "axios";
 
 export const Realtime = () => {
 
+
+    const [newMsg, setNewMsg] = useState<string>();
+    const [lastId, setLastId] = useState(0);
     const [calamity, setCalamity] = useState<calamity[]>([]);
 
+    const messaging = getMessaging();
+
+    onMessage(messaging, (payload) => {
+        if (payload.data && payload.data.title && payload.data.body) {
+            setNewMsg(payload.data.body);
+        }
+    });
+
     useEffect(() => {
-        setCalamity([
-            {
-                id: 1,
-                name: "전라북도 군산시",
-                description: "[군산시] 금일 발생한 서수면 암모니아 누출 사고는 현재 공장 내 수습 진행 중으로 공장 밖으로 추가 확산 가능성은 없음. 주민들께서는 일상생활에 복귀 바랍니다.",
-                map: "전라북도 군산시",
-                date: "2023/07/03 20:52:30"
-            },
-            {
-                id: 2,
-                name: "경상남도 창원시 의창구",
-                description: "[경남경찰청] 창원시에서 실종된 박현영씨(여, 42세)를 찾습니다 - 160cm, 85kg, 초록색티셔츠,베이지반바지,은색샌들",
-                map: "경상남도 창원시 의창구",
-                date: "2023/07/03 20:23:24"
-            }
-        ])
-    }, [])
+        axios.get('http://ec2-15-164-230-207.ap-northeast-2.compute.amazonaws.com:8081/api/disaster/info')
+            .then(response => {
+                const msgData = response.data.DisasterMsg[1];
+                const newCalamityInfos = {
+                    id: lastId + 1,
+                    name: msgData.row[0].location_name,
+                    description: msgData.row[0].msg,
+                    map: msgData.row[0].location_name,
+                    date: msgData.row[0].create_date
+                };
+
+                let updatedCalamityInfos = [newCalamityInfos, ...calamity];
+
+                if (updatedCalamityInfos.length > 5) {
+                    updatedCalamityInfos = updatedCalamityInfos.slice(5);
+                }
+
+                setCalamity(updatedCalamityInfos);
+                console.log(msgData);
+
+                setLastId(lastId + 1);
+            })
+            .catch(error => {
+                console.error('There was an error!', error);
+            });
+    }, [newMsg]);
+
 
     return (
         <div className="container">
